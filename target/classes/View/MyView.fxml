@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import View.MazeDisplayer?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="View.MyViewController"
+            prefWidth="900.0" prefHeight="650.0">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem fx:id="newMenuItem" text="New"/>
+                        <MenuItem fx:id="saveMenuItem" text="Save"/>
+                        <MenuItem fx:id="loadMenuItem" text="Load"/>
+                        <MenuItem fx:id="exitMenuItem" text="Exit"/>
+                    </items>
+                </Menu>
+                <Menu text="Options">
+                    <items>
+                        <MenuItem fx:id="propertiesMenuItem" text="Properties"/>
+                    </items>
+                </Menu>
+                <Menu text="Help">
+                    <items>
+                        <MenuItem fx:id="helpMenuItem" text="How To Play"/>
+                        <MenuItem fx:id="aboutMenuItem" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <AnchorPane>
+            <children>
+                <MazeDisplayer fx:id="mazeDisplayer"
+                               AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+                               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
+            </children>
+        </AnchorPane>
+    </center>
+    <bottom>
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="8.0" right="10.0" bottom="8.0" left="10.0"/>
+            </padding>
+            <children>
+                <Button fx:id="generateButton" text="🆕 New Game" style="-fx-font-weight: bold;"/>
+                <Button fx:id="solveButton" text="Solve"/>
+                <Label fx:id="statusLabel" text="Use File -> New to start a new maze."/>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
